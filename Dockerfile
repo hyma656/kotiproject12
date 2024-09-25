@@ -1,7 +1,7 @@
-FROM ubuntu
+FROM centos
 LABEL maintainer address "hyma"
 RUN apt update
-RUN apt install apache2 -y
+RUN apt install httpd -y
 COPY ./index.html /var/www/html
-CMD ["apachectl","-D","FOREGROUND"]
+CMD ["httpd","-D","FOREGROUND"]
 
