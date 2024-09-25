@@ -1,4 +1,7 @@
-FROM nginx
-LABEL maintainer address "koteswarao"
-COPY ./index.html /usr/share/nginx/html
-EXPOSE 80
+FROM ubuntu
+label maintainer address "hyma"
+run apt updats
+run apt install apache2 -y
+copy ./index.html /var/www/html
+cmd ["apachectl","-D","FOREGROUND"]
+
